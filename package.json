@@ -1,0 +1,11 @@
+{
+  "name": "lynda-nodejs-essential",
+  "version": "1.0.0",
+  "description": "Code from Lynda's course NodeJs Essential",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jonribeiro",
+  "license": "ISC"
+}
