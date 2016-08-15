@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 var questions = [
   "What is your name?",
   "What is your fav hobby?",
@@ -34,4 +35,3 @@ process.on('exit', function() {
 });
 
 ask(0);
-
