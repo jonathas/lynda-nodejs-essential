@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 var readline = require('readline');
 var rl = readline.createInterface(process.stdin, process.stdout);
 var fs = require("fs");
@@ -43,8 +44,5 @@ rl.on('close', function() {
 
 	console.log("%s is a real person that says %j", realPerson.name, realPerson.sayings);
 	process.exit();
-	
+
 });
-
-
-
