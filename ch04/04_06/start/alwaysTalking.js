@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 var sayings = [
     "You may delay, but time will not.",
     "Tell me and I forget. Teach me and I remember. Involve me and I learn.",
