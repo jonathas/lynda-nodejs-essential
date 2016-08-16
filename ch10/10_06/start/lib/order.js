@@ -1,3 +1,4 @@
+/* jshint esnext: true */
 var inventoryData = require('../data/inventory');
 var warehouse = require('./warehouse');
 
