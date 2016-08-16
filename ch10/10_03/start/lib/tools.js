@@ -1,3 +1,4 @@
+/* jshint esnext: true */
 var https = require("https");
 
 module.exports = {
