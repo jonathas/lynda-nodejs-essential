@@ -1,4 +1,5 @@
-var inventoryData = require('../data-sample/inventory');
+/* jshint esnext: true */
+var inventoryData = require('../data/inventory');
 var warehouse = require('./warehouse');
 
 function findItem(sku) {
