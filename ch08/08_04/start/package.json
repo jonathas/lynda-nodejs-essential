@@ -11,11 +11,11 @@
     "terms",
     "dictionary"
   ],
-  "author": "Alex Banks",
+  "author": "jonribeiro",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.14.1",
+    "body-parser": "^1.15.2",
     "cors": "^2.7.1",
-    "express": "^4.13.3"
+    "express": "^4.14.0"
   }
 }
