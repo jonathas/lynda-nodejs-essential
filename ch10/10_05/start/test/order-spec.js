@@ -1,28 +1,37 @@
-var expect = require("chai").expect;
-var rewire = require("rewire");
+var expect = require('chai').expect;
+var rewire = require('rewire');
 
-var order = rewire("../lib/order");
+// Loading with rewire instead of require
+var order = rewire('../lib/order');
+
+var sinon = require('sinon');
 
 describe("Ordering Items", function() {
 
-	beforeEach(function() {
+    beforeEach(function() {
+        this.testData = [
+            {sku: "AAA", qty: 10},
+            {sku: "BBB", qty: 0},
+            {sku: "CCC", qty: 3}
+        ];
 
-		this.testData = [
-			{sku: "AAA", qty: 10},
-			{sku: "BBB", qty: 0},
-			{sku: "CCC", qty: 3}
-		];
+        // Using sinon to replace the console
+        this.console = {
+            log: sinon.spy()
+        };
 
-		order.__set__("inventoryData", this.testData);
+        // Injecting fake test with rewire
+        order.__set__("inventoryData", this.testData);
+        order.__set__("console", this.console);
+    });
 
-	});
+    it("order an item when there are enough in stock", function(done) {
+        var _this = this;
 
-	it("order an item when there are enough in stock", function(done) {
-
-		order.orderItem("CCC", 3, function() {
-			done();
-		});
-
-	});
-
+        order.orderItem("CCC", 3, function() {
+            // The mocha object will fall out of scope, but we still have it under _this
+            expect(_this.console.log.callCount).to.equal(2);
+            done();
+        });
+    });
 });
